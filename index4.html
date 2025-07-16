@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="inputso1">
+    <input type="number" id="inputso2">
+    <button id="btnclick">TINH TONG</button> <br>
+    <span id="ketqua"></span>
+    <script>
+        var inputso1 = document.getElementById('inputso1');
+        var inputso2 = document.getElementById('inputso2');
+        var btnclick = document.getElementById('btnclick');
+        var ketqua = document.getElementById('ketqua');
+        btnclick.addEventListener('click', TINHTONG)
+
+        function TINHTONG() {
+            var a = Number(inputso1.value)
+            var b = Number(inputso2.value)
+            var tong = a + b;
+            console.log(tong)
+            ketqua.innerText = "Tong hai so la: " + tong;
+        }
+    </script>
+</body>
+
+</html>
