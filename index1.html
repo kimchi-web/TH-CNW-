@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputname" value="VNA" placeholder="name">
+    <button id="btnclick"> Click</button>
+
+    <script>
+        var inputname = document.getElementById('inputname');
+        var btnclick = document.getElementById('btnclick');
+
+        function calltoHello() {
+            console.log('Hello' + ' ' + inputname.value)
+        }
+
+        btnclick.onclick = calltoHello;
+    </script>
+</body>
+
+</html>
