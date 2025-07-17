@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            background-color: red;
+            color: aliceblue;
+        }
+        .success {
+        background-color: green;
+        color: white;
+        padding: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input id="number" type="text" placeholder="Nhập số">
+    <span class="error" id="spannumber"></span> <br>
+
+    <input id="mobilenumber" type="text" placeholder="mobile phone: XXXXXXXXXX">
+    <span class="error" id="spanmobilenumber"></span> <br>
+    <span class="success" id="spansuccess"></span> <br>
+    <button id="btnCheck">Check</button> 
+    <script>
+        var number= document.getElementById('number');
+        var spannumber= document.getElementById('spannumber');
+
+        var mobilenumber = document.getElementById('mobilenumber');
+        var spanmobilenumber = document.getElementById('spanmobilenumber');
+
+
+        var spansuccess = document.getElementById('spansuccess');
+
+         var btnCheck= document.getElementById('btnCheck');
+
+        function checkNumberfn(){
+            var pattern = /\d/;
+            var logic = pattern.test(number.value);
+            //console.log(logic);
+            if (logic){
+                spannumber.innerText = ''
+            } else{
+                spannumber.innerText = 'Please check input'
+            }
+            return logic;
+        
+        }
+        function checkMobileNumberfn(){
+            var pattern = /^\d{10}$/;
+            var logic = pattern.test(mobilenumber.value);
+            //console.log(logic);
+            if (logic){
+                spanmobilenumber.innerText = ''
+            } else{
+                spanmobilenumber.innerText = 'Please check input'
+            }
+            return logic;
+        }
+        function checkAll() {
+            spansuccess.innerText = ''; // reset thành công trước
+            const validNumber = checkNumberfn();
+            const validMobile = checkMobileNumberfn();
+            if (validNumber && validMobile) {
+                spansuccess.innerText = 'Success';
+            }
+        }
+        
+        
+        btnCheck.onclick = checkAll;
+    </script>
+</body>
+</html>
