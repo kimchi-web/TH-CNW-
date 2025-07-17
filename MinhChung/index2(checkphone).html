@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Số</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <input id="mobilenumber" type="text" placeholder="mobile phone: XXXXXXXXXX">
+    <button id="btnCheck">Check</button> <br>
+    <span class="error" id="spanmoblilenumber"></span>
+
+    <script>
+        var mobilenumber = document.getElementById('mobilenumber');
+        var btncheck = document.getElementById('btnCheck');
+        var spanmoblilenumber = document.getElementById('spanmoblilenumber');
+
+        function checkMobileNumberfn() {
+            var pattern = /^\d{10}$/;
+            var logic = pattern.test(mobilenumber.value);
+            //console.log(logic);
+        if (logic) {
+            spanmoblilenumber.innerText = 'Thành công';
+            spanmoblilenumber.style.color = 'green';
+        } else {
+            spanmoblilenumber.innerText = 'Please check input:';
+            spanmoblilenumber.style.color = 'red';
+        }
+
+
+
+    
+        }
+
+        btnCheck.onclick = checkMobileNumberfn;
+    </script>
+
+</body>
+</html>
