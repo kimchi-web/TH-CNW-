@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Date</title>
+</head>
+<body>
+
+  <input type="date" id="dateInput" placeholder="YYYY-MM-DD">
+  <button id="btnCheck">Check</button>
+  <div id="result"></div>
+
+  <script>
+    var dateInput = document.getElementById('dateInput');
+    var btnCheck = document.getElementById('btnCheck');
+
+    function checkDate() {
+        var selectedDate = new Date(dateInput.value);
+        var today = new Date();
+        selectedDate.setHours(0, 0, 0, 0);
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            document.getElementById('result').innerText = "Ngày bạn chọn là trước ngày hôm nay.";
+        } else if (selectedDate > today) {
+            document.getElementById('result').innerText = "Ngày bạn chọn là sau ngày hôm nay.";
+        } else {
+            document.getElementById('result').innerText = "Ngày bạn chọn chính là hôm nay!";
+        }
+    }
+
+    btnCheck.onclick = checkDate;
+  </script>
+
+</body>
+</html>
