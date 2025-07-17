@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            background-color: brown;
+            color:azure;
+        }
+    </style>
+</head>
+<body>
+    <input id="birthday" type="text" placeholder="DD-MM-YYYY">
+    <button id="btnCheck">Check</button> <br>
+    <span class="error" id="spanerror"></span>
+    <script>
+        var birthdayinput= document.getElementById('birthday');
+       
+       var spanerror= document.getElementById('spanerror');
+        var btnCheck= document.getElementById('btnCheck');
+        console.log(btnCheck);
+        
+        function checkBirthday(){
+            var pattern = /(\d{2}-(\d{2})-(\d{4}))/;
+
+            var logic = pattern.test (birthdayinput.value);
+            if( logic){
+                spanerror.innerText = ''
+            } else {
+                spanerror.innerText = 'Check input format please!'
+                
+            }
+        }
+        btnCheck.onclick = checkBirthday
+    </script>
+</body>
+</html>
+
